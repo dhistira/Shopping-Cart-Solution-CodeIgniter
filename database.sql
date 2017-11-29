@@ -98,6 +98,8 @@ CREATE TABLE IF NOT EXISTS `orders` (
   `viewed` tinyint(1) NOT NULL DEFAULT '0' COMMENT 'viewed status is change when change processed status',
   `confirmed` tinyint(1) NOT NULL DEFAULT '0',
   `discount_code` varchar(20) NOT NULL,
+  `total_price` varchar(255) NOT NULL DEFAULT '0',
+  `admin_profit` varchar(255) NOT NULL DEFAULT '0'
   PRIMARY KEY (`id`)
 ) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
 
@@ -367,7 +369,9 @@ CREATE TABLE `vendors_orders` (
   `viewed` tinyint(1) NOT NULL DEFAULT '0',
   `confirmed` tinyint(1) NOT NULL DEFAULT '0',
   `discount_code` varchar(20) NOT NULL,
-  `vendor_id` int(10) UNSIGNED NOT NULL
+  `vendor_id` int(10) UNSIGNED NOT NULL,
+  `total_price` varchar(255) NOT NULL DEFAULT '0',
+  `vendors_profit` varchar(255) NOT NULL DEFAULT '0'
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 ALTER TABLE `vendors_orders`
