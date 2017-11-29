@@ -117,13 +117,31 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                             <td><?= $item['price'] . CURRENCY ?></td>
                                             <td><?= $item['sum_price'] . CURRENCY ?></td>
                                         </tr>
+                                        <tr>
+                                            <td colspan="4" class="text-right">Unique Code</td>
+                                            <td>
+                                                <span class="unique-code"><?= CURRENCY ?> <?php $anu = mt_rand(0,999); echo $anu;?></span>
+                                                <input type="hidden" name="discountAmount" value="">
+                                            </td>
+                                        </tr>
                                     <?php } ?>
                                     <tr>
                                         <td colspan="4" class="text-right"><?= lang('total') ?></td>
                                         <td>
-                                            <span class="final-amount"><?= $cartItems['finalSum'] ?></span><?= CURRENCY ?>
-                                            <input type="hidden" class="final-amount" name="final_amount" value="<?= $cartItems['finalSum'] ?>">
+                                            <span class="final-amount"><?= CURRENCY ?> <?php $bersih = str_replace(array(',','.'), '', $cartItems['finalSum']);
+                                            $jumlahbaru = substr($bersih,0,-2) + $anu;
+                                            echo number_format($jumlahbaru);?></span>
                                             <input type="hidden" name="amount_currency" value="<?= CURRENCY ?>">
+
+                                            <input type="hidden" class="final-amount" name="final_amount" value="<?php $bersih = str_replace(array(',','.'), '', $cartItems['finalSum']);
+                                            $jumlahbaru = substr($bersih,0,-2) + $anu;
+                                            echo number_format($jumlahbaru);?>">
+                                            <input type="hidden" class="final-amount" name="profit" value="<?php $bersih = str_replace(array(',','.'), '', $cartItems['finalSum']);
+                                            $jumlahbaru = substr($bersih,0,-2) * 95/100; //for vendor profit
+                                            echo number_format($jumlahbaru);?>">
+                                            <input type="hidden" class="final-amount" name="profit_owner" value="<?php $bersih = str_replace(array(',','.'), '', $cartItems['finalSum']);
+                                            $jumlahbaru = substr($bersih,0,-2) * 5/100; //for admin profit
+                                            echo number_format($jumlahbaru);?>">
                                             <input type="hidden" name="discountAmount" value="">
                                         </td>
                                     </tr>
