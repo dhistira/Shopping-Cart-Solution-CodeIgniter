@@ -65,7 +65,18 @@ foreach ($all_categories as $categorie) {
                     <h2 class="hidden-xs"><?= lang('welcome') ?></h2>
                 </div>
                 <div class="col-sm-4">
-                    <?= $load::getProducts($bestSellers, '', true) ?>
+                   <img src="<?= base_url('attachments/banner/default.jpg') ?>" class="img-responsive"> <!--354 x 354 px-->
+                </div>
+                <div class="col-md-12">
+                   <div class="col-sm-4">
+                      <img src="<?= base_url('attachments/banner/vektor.jpg') ?>" class="img-responsive"> <!--300x150 px-->
+                   </div>
+                   <div class="col-sm-4">
+                      <img src="<?= base_url('attachments/banner/small.jpg') ?>" class="img-responsive"> <!--300x150 px-->
+                   </div>
+                   <div class="col-sm-4">
+                      <img src="<?= base_url('attachments/banner/wpap.jpg') ?>" class="img-responsive"> <!--300x150 px-->
+                   </div>
                 </div>
             </div>
         <?php } ?>
