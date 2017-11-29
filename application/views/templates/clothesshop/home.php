@@ -67,6 +67,21 @@ foreach ($all_categories as $categorie) {
                 <div class="col-sm-4">
                     <?= $load::getProducts($bestSellers, '', true) ?>
                 </div>
+                <!--uncomment and comment div class col sm 4 above if you want to have a banner like in screenshot of theme
+                <div class="col-sm-4">
+                    <img src="link to your banner 354 x 354px" class="img-responsive">
+                </div>
+                <div class="col-md-12">
+                    <div class="col-sm-4">
+                       <img src="link to your banner 300 x 150px" class="img-responsive">
+                    </div>
+                    <div class="col-sm-4">
+                       <img src="link to your banner 300 x 150px" class="img-responsive">
+                    </div>
+                    <div class="col-sm-4">
+                       <img src="link to your banner 300 x 150px" class="img-responsive">
+                    </div>
+                </div>-->
             </div>
         <?php } ?>
         <div class="h-line"></div>
