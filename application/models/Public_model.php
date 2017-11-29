@@ -285,7 +285,9 @@ class Public_model extends CI_Model
                     'clean_referrer' => $post['clean_referrer'],
                     'payment_type' => $post['payment_type'],
                     'paypal_status' => @$post['paypal_status'],
-                    'discount_code' => @$post['discountCode']
+                    'discount_code' => @$post['discountCode'],
+                    'total_price' => $post['final_amount'],
+                    'admin_profit' => $post['profit_owner']
                 ))) {
             log_message('error', print_r($this->db->error(), true));
         }
@@ -349,7 +351,9 @@ class Public_model extends CI_Model
                             'payment_type' => $post['payment_type'],
                             'paypal_status' => @$post['paypal_status'],
                             'discount_code' => @$post['discountCode'],
-                            'vendor_id' => $productInfo['vendor_id']
+                            'vendor_id' => $productInfo['vendor_id'],
+                            'total_price' => $post['final_amount'],
+                            'profit' => $post['profit']
                         ))) {
                     log_message('error', print_r($this->db->error(), true));
                 }
